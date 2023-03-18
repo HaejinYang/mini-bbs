@@ -1,8 +1,9 @@
+import {FC} from "react";
 
-const Home = () => {
+const Home: FC<{}> = () => {
     return (
         <div>
-            <h1>홈페이지에요</h1>
+            <h1>홈 화면 입니다.</h1>
         </div>
     )
 }

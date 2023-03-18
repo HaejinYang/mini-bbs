@@ -11,3 +11,6 @@
 ## 스택 목표
 1. react, typescript, styled-component
 2. 리덕스 없이 useReducer, useState, context api로 상태 관리를 한다.
+
+## 생각해볼 점
+1. Post 컴포넌트가 비대해졌다. 게시글과 댓글을 볼 수 있고, 댓글을 작성할 수 있고, 게시글을 쓸 수 있는 기능들이 모여 있어서 그런거 같은데... 어떤게 바꿀 방법이 없으려나

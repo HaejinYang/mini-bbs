@@ -3,7 +3,6 @@ import {FC, useContext, MouseEvent, useState, ChangeEvent} from "react";
 import {CommentContext} from "../post/Post";
 import { CommentType } from "./Comment";
 
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;

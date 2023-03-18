@@ -66,7 +66,6 @@ const PostReducer = (state: PostReducerState, action: PostReducerAction): PostRe
     return newState;
 }
 
-
 interface PostContextType {
     posts: PostType[];
     store: (post: PostType) => void;
