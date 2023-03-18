@@ -25,7 +25,7 @@ function App() {
             <PostContext.Provider value={{posts: postState.posts, store: postStore}}>
                 <Routes>
                     <Route path="/" element={<HomePage/>}></Route>
-                    <Route path="/post/*">
+                    <Route path="/post">
                         <Route path=":id" element={<PostViewEachPage/>}></Route>
                         <Route path="write" element={<PostWritePage/>}></Route>
                         <Route path="all" element={<PostViewAllPage/>}></Route>
