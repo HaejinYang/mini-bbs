@@ -17,6 +17,7 @@ const PostReducer = (state: PostReducerState, action: PostReducerAction): PostRe
         case "STORE":
             if (action.post) {
                 newState.posts.push(action.post);
+                localStorage.setItem('post', JSON.stringify(newState.posts));
             }
             break;
         case "UPDATE":
@@ -24,8 +25,6 @@ const PostReducer = (state: PostReducerState, action: PostReducerAction): PostRe
                 const index = newState.posts.findIndex((element) => element.id === action.post?.id);
                 if (index !== -1) {
                     newState.posts[index] = {...action.post};
-
-                    localStorage.setItem('post', JSON.stringify(newState.posts));
                 }
             }
             break;
