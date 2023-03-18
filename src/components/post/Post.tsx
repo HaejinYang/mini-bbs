@@ -11,6 +11,10 @@ import styled from "styled-components";
 import {createContext} from "react";
 import CommentWrite from "../comment/CommentWrite";
 import comment from "../comment/Comment";
+import PostReducer from "./reducer/PostReducer";
+import CommentReducer from "../comment/reducer/CommentReducer";
+import PostContext from "./context/PostContext";
+import CommentContext from "../comment/context/CommentContext";
 
 type ParamType = {
     id: string;
@@ -29,93 +33,6 @@ const Wrapper = styled.div`
 const Container = styled.div`
   width: 450px;
 `
-
-interface PostReducerState {
-    posts: PostType[];
-}
-
-type PostReducerActionType = "STORE" | "UPDATE";
-
-interface PostReducerAction {
-    type: PostReducerActionType;
-    post?: PostType;
-}
-
-const PostReducer = (state: PostReducerState, action: PostReducerAction): PostReducerState => {
-    const newState: PostReducerState = {...state, posts: [...state.posts]};
-    switch (action.type) {
-        case "STORE":
-            if (action.post) {
-                newState.posts.push(action.post);
-            }
-            break;
-        case "UPDATE":
-            if (action.post) {
-                const index = newState.posts.findIndex((element) => element.id === action.post?.id);
-                if (index !== -1) {
-                    newState.posts[index] = {...action.post};
-
-                    localStorage.setItem('post', JSON.stringify(newState.posts));
-                }
-            }
-            break;
-        default:
-            break;
-    }
-
-    return newState;
-}
-
-interface PostContextType {
-    posts: PostType[];
-    store: (post: PostType) => void;
-}
-
-interface CommentContextType {
-    comments: CommentType[];
-    store: (comment: CommentType) => void;
-}
-
-const PostContext = createContext<PostContextType>({
-    posts: [],
-    store: () => {
-    },
-});
-
-const CommentContext = createContext<CommentContextType>({
-    comments: [],
-    store: () => {
-    }
-})
-
-interface CommentState {
-    comments: CommentType[];
-}
-
-interface CommentAction {
-    type: CommentActionType;
-    comment?: CommentType;
-}
-
-type CommentActionType = "STORE" | "UPDATE";
-
-const CommentReducer = (state: CommentState, action: CommentAction): CommentState => {
-    const newState: CommentState = {...state, comments: [...state.comments]};
-    switch (action.type) {
-        case "STORE":
-            if (action.comment) {
-                newState.comments.push(action.comment);
-                localStorage.setItem('comment', JSON.stringify(newState.comments));
-            }
-            break;
-        case "UPDATE":
-            break;
-        default:
-            break;
-    }
-
-    return newState;
-}
 
 const Post = () => {
     const {id} = useParams<ParamType>();
