@@ -1,0 +1,12 @@
+*,
+*:after, *:before {
+    box-sizing: border-box;
+}
+
+/*
+    공간 확인용
+*/
+*,
+*:after, *:before {
+    /*box-shadow: inset 0 0 10px red;*/
+}
