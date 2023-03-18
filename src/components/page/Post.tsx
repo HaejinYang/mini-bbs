@@ -1,19 +1,19 @@
-import PostCardListContainer from "./PostCardListContainer";
-import PostCardList from "./PostCardList";
+import PostCardListContainer from "../post/PostCardListContainer";
+import PostCardList from "../post/PostCardList";
 import React, {useEffect, useReducer, useState} from "react";
 import {useParams} from "react-router-dom";
-import PostWrite from "./PostWrite";
+import PostWrite from "../post/PostWrite";
 import {PostType} from "../types";
-import PostItem from "./PostItem";
+import PostItem from "../post/PostItem";
 import CommentList from "../comment/CommentList";
 import Comment, {CommentType} from "../comment/Comment";
 import styled from "styled-components";
 import {createContext} from "react";
 import CommentWrite from "../comment/CommentWrite";
 import comment from "../comment/Comment";
-import PostReducer from "./reducer/PostReducer";
+import PostReducer from "../post/reducer/PostReducer";
 import CommentReducer from "../comment/reducer/CommentReducer";
-import PostContext from "./context/PostContext";
+import PostContext from "../post/context/PostContext";
 import CommentContext from "../comment/context/CommentContext";
 
 type ParamType = {
@@ -91,4 +91,3 @@ const Post = () => {
 }
 
 export default Post;
-export {PostContext, CommentContext};

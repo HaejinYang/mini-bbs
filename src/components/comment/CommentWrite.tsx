@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {FC, useContext, MouseEvent, useState, ChangeEvent} from "react";
-import {CommentContext} from "../post/Post";
 import { CommentType } from "./Comment";
+import CommentContext from "./context/CommentContext";
 
 const Container = styled.div`
   display: flex;

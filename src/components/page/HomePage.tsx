@@ -1,6 +1,6 @@
 import {FC} from "react";
 
-const Home: FC<{}> = () => {
+const HomePage: FC<{}> = () => {
     return (
         <div>
             <h1>홈 화면 입니다.</h1>
@@ -8,4 +8,4 @@ const Home: FC<{}> = () => {
     )
 }
 
-export default Home;
+export default HomePage;

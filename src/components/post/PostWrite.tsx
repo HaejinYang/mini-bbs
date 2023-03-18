@@ -1,7 +1,7 @@
 import {MouseEvent, ChangeEvent, FormEvent, useContext, useState} from "react";
 import styled from "styled-components";
-import post, {PostContext} from "./Post";
 import {useNavigate} from 'react-router-dom';
+import PostContext from "./context/PostContext";
 
 interface TextAreaProps {
     height: number;

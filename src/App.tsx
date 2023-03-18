@@ -1,8 +1,8 @@
 import './global.css';
-import React, {createContext} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Post from "./components/post/Post";
-import Home from "./components/home/Home";
+import Post from "./components/page/Post";
+import HomePage from "./components/page/HomePage";
 import NavBar from "./components/nav/NavBar";
 import {PostType} from "./components/types";
 import {CommentType} from "./components/comment/Comment";
@@ -14,7 +14,7 @@ function App() {
         <BrowserRouter>
             <NavBar/>
             <Routes>
-                <Route path="/" element={<Home/>}></Route>
+                <Route path="/" element={<HomePage/>}></Route>
                 <Route path="/post/:id" element={<Post/>}></Route>
             </Routes>
         </BrowserRouter>
